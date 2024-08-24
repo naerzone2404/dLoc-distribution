@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:push_notificaciones/providers/miguia_provider.dart';
-import 'package:push_notificaciones/views/screens/boton_para_mover_carro.dart';
-import 'package:push_notificaciones/views/screens/lista_guias.dart';
+import 'package:push_notificaciones/views/screens/diferencias_api.dart';
+
 
 
 class GuiasServicios extends StatefulWidget {
@@ -31,7 +31,7 @@ class _GuiasServiciosState extends State<GuiasServicios> {
                   context.read<MiGuiasProvider>().guias;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ListaGuias()),
+                    MaterialPageRoute(builder: (context) => const ProductosGridScreen()),
                   );
                 },
               ),
@@ -42,7 +42,7 @@ class _GuiasServiciosState extends State<GuiasServicios> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ListaGuias()),
+                    MaterialPageRoute(builder: (context) => const ProductosGridScreen()),
                   );
                 },
               ),
@@ -53,7 +53,7 @@ class _GuiasServiciosState extends State<GuiasServicios> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ControlView()),
+                    MaterialPageRoute(builder: (context) => const ProductosGridScreen()),
                   );
                 },
               ),
