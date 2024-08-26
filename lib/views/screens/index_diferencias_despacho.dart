@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:push_notificaciones/providers/api_diferencias_provider.dart';
-import 'package:push_notificaciones/views/screens/registro_salida.dart';
-
+import 'package:push_notificaciones/routes/tracking_screen.dart';
 
 class ProductosGridScreen extends StatelessWidget {
   const ProductosGridScreen({super.key});
@@ -16,26 +15,26 @@ class ProductosGridScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
-        title: const Text('Productos', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+        title: const Text(
+          'Despachos',
+          style: TextStyle(
+              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.black
-        ),
+        decoration: const BoxDecoration(color: Colors.black),
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             TextField(
               style: const TextStyle(color: Colors.black),
-              decoration:  InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-                hintText: '¿Qué guía deseas buscar?',
-                prefixIcon: const Icon(
-                  color: Colors.black,
-                  Icons.search),
-                fillColor: Colors.white,
-                filled: true
-              ),
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  hintText: '¿Qué guía deseas buscar?',
+                  prefixIcon: const Icon(color: Colors.black, Icons.search),
+                  fillColor: Colors.white,
+                  filled: true),
               onChanged: (query) {
                 productosProvider.searchProducto(query);
               },
@@ -52,8 +51,10 @@ class ProductosGridScreen extends StatelessWidget {
                   final producto = productos[index];
                   return InkWell(
                     onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> RegistroSalida(isActive: true, label: '159144', onChanged: (bool value) {  },)));
-
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RutaDetailsScreen()));
                     },
                     child: Card(
                       color: _getColorByIndex(index),

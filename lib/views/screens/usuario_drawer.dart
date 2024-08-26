@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:push_notificaciones/views/screens/configuraciones_privacidad.dart';
 import 'package:push_notificaciones/views/screens/drawer_control_asistencia.dart';
+import 'package:push_notificaciones/views/screens/drawer_guias.dart';
+import 'package:push_notificaciones/views/screens/seguimiento_pedido.dart';
 
 class MyCustomDrawer extends StatelessWidget {
   const MyCustomDrawer({super.key, required this.usuario});
@@ -8,13 +11,13 @@ class MyCustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.grey[850],
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: Colors.black87, // Fondo negro
+              color: Color.fromARGB(31, 202, 183, 183) // Fondo negro
             ),
             child: Row(
               children: [
@@ -56,9 +59,11 @@ class MyCustomDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.add, color: Colors.white),
-            title: const Text('Rutas', style: TextStyle(color: Colors.white)),
+            title: const Text('Seguimiento', style: TextStyle(color: Colors.white)),
             onTap: () {
               // Acción al hacer clic en "Agregar cuenta"
+             // Navigator.push(context, MaterialPageRoute(builder: (context)=>  SeguimientoPedidoScreen()));
+              
             },
           ),
           ListTile(
@@ -66,6 +71,7 @@ class MyCustomDrawer extends StatelessWidget {
             title: const Text('Guias', style: TextStyle(color: Colors.white)),
             onTap: () {
               // Acción al hacer clic en "Novedades"
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const GuiasScreen()));
             },
           ),
           ListTile(
@@ -82,6 +88,8 @@ class MyCustomDrawer extends StatelessWidget {
             title: const Text('Configuración y privacidad', style: TextStyle(color: Colors.white)),
             onTap: () {
               // Acción al hacer clic en "Configuración y privacidad"
+               Navigator.push(context, MaterialPageRoute(builder: (context)=> const ConfiguracionesPrivacidadScreen() ));
+              
             },
           ),
         ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:push_notificaciones/models/modelo_api_diferencias.dart';
 
+//Provider de la pantalla principal incluye consumo de api
 class ProductosProvider with ChangeNotifier {
   List<Productos> _productos = [];
   List<Productos> _filteredProductos = [];

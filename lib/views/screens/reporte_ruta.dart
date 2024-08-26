@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:push_notificaciones/providers/rutas_provider.dart';
-import 'package:push_notificaciones/test/tracking_screen.dart';// Asegúrate de tener esta importación para Ruta
+import 'package:push_notificaciones/views/screens/registro_salida.dart';
 
+// antes el inicio
 class ReporteRutas extends StatefulWidget {
   const ReporteRutas({super.key});
 
@@ -14,6 +15,15 @@ class _ReporteRutasState extends State<ReporteRutas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text(
+          'Guias',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
       backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -26,20 +36,21 @@ class _ReporteRutasState extends State<ReporteRutas> {
                   child: TextField(
                     style: const TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search, color: Colors.black),
-                      hintText: '¿Que guia deseas buscar?',
-                      labelStyle: const TextStyle(color: Colors.black),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(color: Colors.white, width: 2.0),
-                      ),
-                      filled: true,
-                      fillColor: Colors.white
-                    ),
+                        prefixIcon:
+                            const Icon(Icons.search, color: Colors.black),
+                        hintText: '¿Que guia deseas buscar?',
+                        labelStyle: const TextStyle(color: Colors.black),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(color: Colors.black),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide:
+                              const BorderSide(color: Colors.white, width: 2.0),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white),
                     onChanged: (value) {
                       context.read<RutasProvider>().searchRuta(value);
                     },
@@ -92,14 +103,17 @@ class _ReporteRutasState extends State<ReporteRutas> {
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => RutaDetailsScreen(ruta: ruta),
-                                  ),
-                                );
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegistroSalida(
+                                              isActive: true,
+                                              label: '159144',
+                                              onChanged: (bool value) {},
+                                            )));
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 8.0),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15.0, horizontal: 8.0),
                                 child: Text(
                                   ruta.registro,
                                   textAlign: TextAlign.center,
@@ -114,14 +128,17 @@ class _ReporteRutasState extends State<ReporteRutas> {
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => RutaDetailsScreen(ruta: ruta),
-                                  ),
-                                );
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegistroSalida(
+                                              isActive: true,
+                                              label: '159144',
+                                              onChanged: (bool value) {},
+                                            )));
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 8.0),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15.0, horizontal: 8.0),
                                 child: Text(
                                   ruta.hora,
                                   textAlign: TextAlign.center,

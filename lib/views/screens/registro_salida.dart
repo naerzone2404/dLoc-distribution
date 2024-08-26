@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Aqui confirmo la salida de mi ruta
 class RegistroSalida extends StatefulWidget {
   const RegistroSalida({
     super.key,
@@ -159,7 +160,7 @@ class _RegistroSalidaState extends State<RegistroSalida> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.greenAccent),
+                borderSide: const BorderSide(color: Colors.greenAccent),
               ),
               contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
             ),

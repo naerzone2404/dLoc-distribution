@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:push_notificaciones/models/modelo_ruta.dart'; 
 
+
+//Esta clase la uso en mi clase GuiasServicios
 class RutasProvider with ChangeNotifier {
   List<Ruta> _rutas = [];
   List<Ruta> _filteredRutas = [];
@@ -15,7 +17,7 @@ class RutasProvider with ChangeNotifier {
       20,
       (index) => Ruta(
         registro: index % 2 == 0
-            ? 'Salida ${index ~/ 2 + 1}'
+            ? 'Salida ${index ~/ 2 + 1} \n F001-555${index ~/ 2 + 1}'
             : 'Llegada ${index ~/ 2 + 1}',
         hora: DateTime.now()
             .subtract(Duration(minutes: Random().nextInt(60))),
